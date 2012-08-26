@@ -1,0 +1,434 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant const='true' declared_type='NSUInteger' name='kMPUploadInterval' type='I'/>
+<function name='MP_NewBase64Decode'>
+<arg const='true' declared_type='char*' name='inputBuffer' type='*'/>
+<arg declared_type='size_t' name='length' type='L'/>
+<arg declared_type='size_t*' name='outputLength' type='^I'/>
+<retval declared_type='void*' type='^v'/>
+</function>
+<function name='MP_NewBase64Encode'>
+<arg const='true' declared_type='void*' name='inputBuffer' type='^v'/>
+<arg declared_type='size_t' name='length' type='L'/>
+<arg declared_type='_Bool' name='separateLines' type='B'/>
+<arg declared_type='size_t*' name='outputLength' type='^I'/>
+<retval declared_type='char*' type='*'/>
+</function>
+<class name='MPCJSONDataSerializer'>
+<method selector='serializeArray:error:'>
+<arg index='0' declared_type='NSArray*' name='inArray' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeDate:error:'>
+<arg index='0' declared_type='NSDate*' name='inDate' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeDictionary:error:'>
+<arg index='0' declared_type='NSDictionary*' name='inDictionary' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeNull:error:'>
+<arg index='0' declared_type='NSNull*' name='inNull' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeNumber:error:'>
+<arg index='0' declared_type='NSNumber*' name='inNumber' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeObject:error:'>
+<arg index='0' declared_type='id' name='inObject' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializeString:error:'>
+<arg index='0' declared_type='NSString*' name='inString' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='serializer' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='MPCJSONSerializer'>
+<method selector='serializeArray:error:'>
+<arg index='0' declared_type='NSArray*' name='inArray' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='serializeDictionary:error:'>
+<arg index='0' declared_type='NSDictionary*' name='inDictionary' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='serializeObject:error:'>
+<arg index='0' declared_type='id' name='inObject' type='@'/>
+<arg index='1' declared_type='NSError**' name='outError' type='^@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='serializer' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='MPCSerializedJSONData'>
+<method selector='data'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='initWithData:'>
+<arg index='0' declared_type='NSData*' name='inData' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='MixpanelAPI'>
+<method selector='apiToken'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='append:toUserPropertyWithKey:'>
+<arg index='0' declared_type='id' name='item' type='@'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applicationDidEnterBackground:'>
+<arg index='0' declared_type='NSNotificationCenter*' name='notification' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applicationWillEnterForeground:'>
+<arg index='0' declared_type='NSNotificationCenter*' name='notification' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applicationWillTerminate:'>
+<arg index='0' declared_type='NSNotification*' name='notification' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='archiveData'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='archiveEvents'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='archivePeople'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='connection'>
+<retval declared_type='NSURLConnection*' type='@'/>
+</method>
+<method selector='defaultUserId'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='deleteCurrentUser'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='deleteUser:'>
+<arg index='0' declared_type='NSString*' name='distinctId' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodedStringFromArray:'>
+<arg index='0' declared_type='NSArray*' name='array' type='@'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='eventQueue'>
+<retval declared_type='NSMutableArray*' type='@'/>
+</method>
+<method selector='eventsToSend'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='flush'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='flushEvents'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='flushOnBackground'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='flushPeople'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='handlePush:'>
+<arg index='0' declared_type='NSDictionary*' name='userInfo' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='identifyUser:'>
+<arg index='0' declared_type='NSString*' name='identity' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='incrementUserProperties:'>
+<arg index='0' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='incrementUserPropertyWithKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='incrementUserPropertyWithKey:byInt:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<arg index='1' declared_type='int' name='amount' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='incrementUserPropertyWithKey:byNumber:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<arg index='1' declared_type='NSNumber*' name='amount' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithToken:'>
+<arg index='0' declared_type='NSString*' name='apiToken' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='nameTag'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='peopleConnection'>
+<retval declared_type='NSURLConnection*' type='@'/>
+</method>
+<method selector='peopleQueue'>
+<retval declared_type='NSMutableArray*' type='@'/>
+</method>
+<method selector='peopleResponseData'>
+<retval declared_type='NSMutableData*' type='@'/>
+</method>
+<method selector='peopleToSend'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='registerDeviceToken:'>
+<arg index='0' declared_type='NSData*' name='deviceToken' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='registerSuperProperties:'>
+<arg index='0' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='registerSuperPropertiesOnce:'>
+<arg index='0' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='registerSuperPropertiesOnce:defaultValue:'>
+<arg index='0' declared_type='NSDictionary*' name='properties' type='@'/>
+<arg index='1' declared_type='id' name='defaultValue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='responseData'>
+<retval declared_type='NSMutableData*' type='@'/>
+</method>
+<method selector='sendDeviceModel'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='serverURL'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='setApiToken:'>
+<arg index='0' declared_type='NSString*' name='apiToken' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setConnection:'>
+<arg index='0' declared_type='NSURLConnection*' name='connection' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDefaultUserId:'>
+<arg index='0' declared_type='NSString*' name='defaultUserId' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg index='0' declared_type='id' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEventQueue:'>
+<arg index='0' declared_type='NSMutableArray*' name='eventQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEventsToSend:'>
+<arg index='0' declared_type='NSArray*' name='eventsToSend' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFlushOnBackground:'>
+<arg index='0' declared_type='BOOL' name='flushOnBackground' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNameTag:'>
+<arg index='0' declared_type='NSString*' name='nameTag' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPeopleConnection:'>
+<arg index='0' declared_type='NSURLConnection*' name='peopleConnection' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPeopleQueue:'>
+<arg index='0' declared_type='NSMutableArray*' name='peopleQueue' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPeopleResponseData:'>
+<arg index='0' declared_type='NSMutableData*' name='peopleResponseData' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPeopleToSend:'>
+<arg index='0' declared_type='NSArray*' name='peopleToSend' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setResponseData:'>
+<arg index='0' declared_type='NSMutableData*' name='responseData' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSendDeviceModel:'>
+<arg index='0' declared_type='BOOL' name='sendDeviceModel' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setServerURL:'>
+<arg index='0' declared_type='NSString*' name='serverURL' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSuperProperties:'>
+<arg index='0' declared_type='NSMutableDictionary*' name='superProperties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTestMode:'>
+<arg index='0' declared_type='BOOL' name='testMode' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUploadInterval:'>
+<arg index='0' declared_type='NSUInteger' name='uploadInterval' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUserProperties:'>
+<arg index='0' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUserProperty:forKey:'>
+<arg index='0' declared_type='id' name='property' type='@'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sharedAPI' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='sharedAPIWithToken:' class_method='true'>
+<arg index='0' declared_type='NSString*' name='apiToken' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='start'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stop'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='superProperties'>
+<retval declared_type='NSMutableDictionary*' type='@'/>
+</method>
+<method selector='testMode'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='track:'>
+<arg index='0' declared_type='NSString*' name='event' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='track:properties:'>
+<arg index='0' declared_type='NSString*' name='event' type='@'/>
+<arg index='1' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='unarchiveData'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='unarchiveEvents'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='unarchivePeople'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='uploadInterval'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+</class>
+<class name='MixpanelEvent'>
+<method selector='dictionaryValue'>
+<retval declared_type='NSDictionary*' type='@'/>
+</method>
+<method selector='initWithName:properties:'>
+<arg index='0' declared_type='NSString*' name='name' type='@'/>
+<arg index='1' declared_type='NSDictionary*' name='properties' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='NSData'>
+<method selector='mp_base64EncodedString'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='mp_dataFromBase64String:' class_method='true'>
+<arg index='0' declared_type='NSString*' name='aString' type='@'/>
+<retval declared_type='NSData*' type='@'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='mixpanel:didFailToUploadEvents:withError:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<arg index='2' declared_type='NSError*' name='error' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didFailToUploadPeople:withError:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<arg index='2' declared_type='NSError*' name='error' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didUploadEvents:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didUploadPeople:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:willUploadEvents:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mixpanel:willUploadPeople:'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<informal_protocol name='MixpanelDelegate'>
+<method selector='mixpanel:didFailToUploadEvents:withError:' type='v20@0:4@8@12@16'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<arg index='2' declared_type='NSError*' name='error' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didFailToUploadPeople:withError:' type='v20@0:4@8@12@16'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<arg index='2' declared_type='NSError*' name='error' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didUploadEvents:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:didUploadPeople:' type='v16@0:4@8@12'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='mixpanel:willUploadEvents:' type='B16@0:4@8@12'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='events' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='mixpanel:willUploadPeople:' type='B16@0:4@8@12'>
+<arg index='0' declared_type='MixpanelAPI*' name='mixpanel' type='@'/>
+<arg index='1' declared_type='NSArray*' name='people' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</informal_protocol>
+</signatures>
